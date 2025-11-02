@@ -1,0 +1,46 @@
+:root { --gap: 1rem; }
+* { box-sizing: border-box; }
+
+body {
+  margin: 2rem;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  color: #111;
+}
+
+#image {
+  height: 60vh;
+  border: 4px solid #000;
+  margin: 1rem 0 2rem;
+  background: #8e68ff url('') center / contain no-repeat;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.gallery {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.preview {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border: 6px solid #000;
+  display: block;
+}
+
+/* Focus visible cho bàn phím */
+.preview:focus {
+  outline: 4px solid #1a73e8;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
